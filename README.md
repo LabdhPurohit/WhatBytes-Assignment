@@ -48,6 +48,10 @@ DEBUG=True
 DATABASE_URL=postgresql://USER:PASSWORD@HOST:PORT/DBNAME
 ```
 
+⚠️ Attention:
+- The .env file is not included in this repository for security reasons.
+- If you need it for local development or testing, feel free to reach out and I’ll provide it securely.
+
 ### 4. Run migrations
 ```bash
 python manage.py migrate
