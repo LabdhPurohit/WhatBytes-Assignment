@@ -1,1 +1,128 @@
-# WhatBytes-Assignment
+# Whatbytes Healthcare Backend
+
+A Django REST Framework backend for a healthcare application, supporting JWT authentication, patient and doctor management, and patient-doctor mappings. Uses PostgreSQL and environment variables for secure configuration.
+
+---
+
+## 🚀 Features
+- User registration and JWT login
+- CRUD for patients (per user)
+- CRUD for doctors (global)
+- Assign/remove doctors to/from patients
+- PostgreSQL database
+- Environment variable support via `.env`
+
+---
+
+## 🛠️ Tech Stack
+- Django & Django REST Framework
+- PostgreSQL
+- djangorestframework-simplejwt (JWT auth)
+- python-dotenv
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone <your-repo-url>
+cd Whatbytes
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Configure environment variables
+Create a `.env` file in the project root:
+```
+SECRET_KEY=your_secret_key
+DEBUG=True
+DATABASE_URL=postgresql://USER:PASSWORD@HOST:PORT/DBNAME
+```
+
+### 4. Run migrations
+```bash
+python manage.py migrate
+```
+
+### 5. Start the server
+```bash
+python manage.py runserver
+```
+
+---
+
+## 🔑 API Authentication
+- Obtain JWT tokens via `/api/auth/login/`.
+- For protected endpoints, add this header:
+  ```
+  Authorization: Bearer <access_token>
+  ```
+
+---
+
+## 📚 API Endpoints Overview
+
+### Authentication
+- `POST /api/auth/register/` — Register a new user
+- `POST /api/auth/login/` — Log in and get JWT tokens
+
+### Patients
+- `POST /api/patients/` — Create patient (auth required)
+- `GET /api/patients/` — List your patients
+- `GET /api/patients/<id>/` — Get patient details
+- `PUT /api/patients/<id>/` — Update patient
+- `DELETE /api/patients/<id>/` — Delete patient
+
+### Doctors
+- `POST /api/doctors/` — Create doctor (auth required)
+- `GET /api/doctors/` — List all doctors
+- `GET /api/doctors/<id>/` — Get doctor details
+- `PUT /api/doctors/<id>/` — Update doctor
+- `DELETE /api/doctors/<id>/` — Delete doctor
+
+### Patient-Doctor Mappings
+- `POST /api/mappings/` — Assign doctor to patient
+- `GET /api/mappings/` — List all mappings
+- `GET /api/mappings/<patient_id>/` — List all doctors for a patient
+- `DELETE /api/mappings/<id>/` — Remove doctor from patient
+
+---
+
+## 🧪 Example API Usage (with curl)
+
+### Register
+```bash
+curl -X POST http://127.0.0.1:8000/api/auth/register/ \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "name": "User", "password": "password123"}'
+```
+
+### Login
+```bash
+curl -X POST http://127.0.0.1:8000/api/auth/login/ \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "password": "password123"}'
+```
+
+### Create Patient
+```bash
+curl -X POST http://127.0.0.1:8000/api/patients/ \
+  -H "Authorization: Bearer <access_token>" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John Doe", "age": 30, "gender": "M"}'
+```
+
+---
+
+## 🧑‍💻 Testing
+- Use [Postman](https://www.postman.com/) or curl to test all endpoints.
+- See the browsable API at `http://127.0.0.1:8000/api/patients/` (and other endpoints) when `DEBUG=True`.
+
+---
+
+## 📄 License
+MIT (or your preferred license) 
