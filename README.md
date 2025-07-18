@@ -129,9 +129,4 @@ curl -X POST http://127.0.0.1:8000/api/patients/ \
 
 ## 🧑‍💻 Testing
 - Use [Postman](https://www.postman.com/) or curl to test all endpoints.
-- See the browsable API at `http://127.0.0.1:8000/api/patients/` (and other endpoints) when `DEBUG=True`.
-
----
-
-## 📄 License
-MIT (or your preferred license) 
+- Link: https://labdhpurohit.postman.co/workspace/Labdh-Purohit's-Workspace~b36c68a9-ad4e-40cf-87d0-5f184df6400b/collection/46880127-1584966b-c73a-439e-9c12-dfa4d03ce4c3?action=share&creator=46880127
