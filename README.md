@@ -31,7 +31,7 @@ A Django REST Framework backend for a healthcare application, supporting JWT aut
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone [<your-repo-url>](https://github.com/LabdhPurohit/WhatBytes-Assignment.git)
 cd Whatbytes
 ```
 
