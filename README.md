@@ -3,7 +3,7 @@
 A Django REST Framework backend for a healthcare application, supporting JWT authentication, patient and doctor management, and patient-doctor mappings. Uses PostgreSQL and environment variables for secure configuration.
 
 ---
-## 🚀 All Tested API's with Responses
+## All Tested API's with Responses
 
 - Link: https://labdhpurohit.postman.co/workspace/Labdh-Purohit's-Workspace~b36c68a9-ad4e-40cf-87d0-5f184df6400b/collection/46880127-1584966b-c73a-439e-9c12-dfa4d03ce4c3?action=share&creator=46880127
 
